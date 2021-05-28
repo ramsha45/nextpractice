@@ -12,6 +12,13 @@ export default function Home() {
         </Head>
 
         <h1 className="heading">HOME PAGE</h1>
+        <ul>
+          <li>HOTEL AVATAR</li>
+          <li>HOTEL MARRIOTT</li>
+          <li>HOTEL PC</li>
+          <li>HOTEL MOVE N PICK</li>
+          <li>HOTEL BEACHTREE</li>
+        </ul>
     </div>
   )
 }

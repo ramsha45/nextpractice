@@ -8,6 +8,9 @@ var Navbar = () => {
             <Link href="/">
                 <a>Home</a>
             </Link>
+            <Link href="/products">
+                <a>Products</a>
+            </Link>
             <Link href="/about">
                 <a>About</a>
             </Link>
