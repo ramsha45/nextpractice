@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import Navigation from '../components/Navbar'
 
+const hotels = ["avatar", "marriott", "pc", "movenpick", "beachtree"]
 
 export default function Home() {
   return (
@@ -13,11 +13,13 @@ export default function Home() {
 
         <h1 className="heading">HOME PAGE</h1>
         <ul>
-          <li>HOTEL AVATAR</li>
-          <li>HOTEL MARRIOTT</li>
-          <li>HOTEL PC</li>
-          <li>HOTEL MOVE N PICK</li>
-          <li>HOTEL BEACHTREE</li>
+          {hotels.map(hotel => (
+            <li className="list">
+              <Link href={`/about?hotelName=${hotel}`}>
+                <a>HOTEL {hotel.toUpperCase()}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
     </div>
   )

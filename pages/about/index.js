@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default  function about(){
     const router = useRouter()
-    const {hotelName=""} = router.query
+    const {hotelName="marriott"} = router.query
     return(
         <div className="container">
             <Head>
