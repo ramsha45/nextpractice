@@ -50,6 +50,12 @@ a {
     line-height: 1.15;
     font-size: 3rem;
 }
+.list{
+    font-size: 2rem;
+}
+.list a:hover{
+    text-decoration: underline;
+}
 
 .heading {
     font-size: 4rem;
