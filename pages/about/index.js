@@ -1,74 +1,19 @@
-import Link from 'next/link'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+
 export default  function about(){
+    const router = useRouter()
+    const {hotelName=""} = router.query
     return(
-        <div className="container" >
-            <h1 className="heading">ABOUT PAGE</h1>
-            <h2 className="title">
-                <Link href="/">
-                    <a>HOME</a>
-                </Link>
-            </h2>
-            <h2 className="title">
-            <Link href="/contact">
-                <a>CONTACT</a>
-            </Link>
-            </h2>
-            <style jsx>{`
-                .container {
-                min-height: 100vh;
-                padding: 0 0.5rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                }
-                a {
-                color: inherit;
-                text-decoration: none;
-                }
-
-                .title a {
-                color: #0070f3;
-                text-decoration: none;
-                }
-
-                .title a:hover,
-                .title a:focus,
-                .title a:active {
-                text-decoration: underline;
-                }
-
-                .title {
-                margin: 0;
-                line-height: 1.15;
-                font-size: 3rem;
-                }
-
-                .heading {
-                font-size: 4rem;
-                }
-                @media (max-width: 600px) {
-                .grid {
-                    width: 100%;
-                    flex-direction: column;
-                }
-                }
-            `}</style>
-
-            <style jsx global>{`
-                html,
-                body {
-                padding: 0;
-                margin: 0;
-                font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-                    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-                    sans-serif;
-                }
-
-                * {
-                box-sizing: border-box;
-                }
-            `}</style>
+        <div className="container">
+            <Head>
+                <title>About</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <h1 className="heading">WELCOME TO HOTEL {hotelName.toUpperCase()}</h1>
+            <p className="info">{hotelName.toUpperCase()} HOTEL have always achieved excellent international standards of quality products & services. The Group is consistently focused on enhancing its brand & creating memorable experiences for people.Overlooking the sprawling city, Our Hotel Karachi is a part of the most significant chain of hotels in Pakistan. The Hotel is perfect for both business and leisure travellers. Guests can choose from a variety of rooms and suites to enjoy their stay at the five-star hotel. Our conference and banquet facilities are a great choice for your next event with flexible meeting spaces. The lavishly selected banqueting venues and ballroom have played host to many prestigious gala dinners, weddings, fashion shows, musical events and official ceremonies.</p>
+            <Image src="/hotel.jpeg" width={600} height={400}/>
         </div>
     )
 }
